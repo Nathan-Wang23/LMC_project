@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+
+
+.App-header {
+  background: linear-gradient(to bottom right, rgba(2,0,36,1) 0%, rgba(184,55,55,1) 35%, rgba(235,162,21,1) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+label {
+  padding:25px;
+}
+
+input[type=submit]:hover {
+  zoom: 102%;
+  border: 3px solid #900c3f;
+}
+
+input[type=text] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    zoom: 102%;
+    border: 3px solid #900c3f;
+    outline: none;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
