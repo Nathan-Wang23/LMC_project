@@ -1,9 +1,7 @@
 import './App.css';
 import React, { Component } from "react";
 import {getSunset} from 'sunrise-sunset-js';
-import GoogleMapReact from 'google-map-react';
 
-import Map from './Map.js';
 import Clue1 from './Clue1.js';
 import Clue2 from './Clue2.js';
 
@@ -14,17 +12,17 @@ class App extends Component {
     const sunset_time = getSunset(52.520008, 13.404954);
 
 
-    if (JSON.parse(window.localStorage.getItem('state')).num_correct === 0 || JSON.parse(window.localStorage.getItem('state')).num_correct === 1 || JSON.parse(window.localStorage.getItem('state')).num_correct === 2 || JSON.parse(window.localStorage.getItem('state')).num_correct === 3 || JSON.parse(window.localStorage.getItem('state')).num_correct === 4 || JSON.parse(window.localStorage.getItem('state')).num_correct === 5 || JSON.parse(window.localStorage.getItem('state')).num_correct === 6) {
+    if (JSON.parse(window.localStorage.getItem('state')) === 0 || JSON.parse(window.localStorage.getItem('state')) === 1 || JSON.parse(window.localStorage.getItem('state')) === 2 || JSON.parse(window.localStorage.getItem('state')) === 3 || JSON.parse(window.localStorage.getItem('state')) === 4 || JSON.parse(window.localStorage.getItem('state')) === 5 || JSON.parse(window.localStorage.getItem('state')) === 6) {
         this.state = {
             value: "",
-            num_correct: JSON.parse(window.localStorage.getItem('state')).num_correct,
+            num_correct: JSON.parse(window.localStorage.getItem('state')),
             sunset: sunset_time,
             time: ""
         }
     } else {
         this.state= {
             value: "",
-            num_correct: 0,
+            num_correct: -1,
             sunset: sunset_time,
             time: ""
         }
@@ -62,7 +60,7 @@ class App extends Component {
     }
     let elm = document.getElementById("head");
 
-    if (hours === "00" && minutes < 40) {
+    if (hours === "00" && minutes < 40 && elm.style.background === "linear-gradient(to bottom right, rgba(2,0,36,1) 0%, rgba(184,55,55,1) 35%, rgba(235,162,21,1) 100%)") {
         elm.style.background ="linear-gradient(to bottom right, rgba(2,0,36,1) 0%, rgba(184,55,55,1) 35%, rgba(235,162,21,1) 100%)";
     }
     let new_time = hours + ":" + minutes + ":" + seconds;
@@ -76,7 +74,11 @@ class App extends Component {
 
 
   setState(state) {
-    window.localStorage.setItem('state', JSON.stringify(state));
+    console.log(window.localStorage.getItem("state"));
+    if (this.state.num_correct !== JSON.parse(window.localStorage.getItem('state'))) {
+        window.localStorage.setItem('state', JSON.stringify(state.num_correct));
+    }
+
     super.setState(state);
   }
 
@@ -146,7 +148,10 @@ class App extends Component {
     event.preventDefault();
   }
 
-
+  handleStart = (event) => {
+    this.setState({value: "", num_correct: this.state.num_correct + 1, sunset:this.state.sunset, time:this.state.time})
+    event.preventDefault();
+  }
 
 
 
@@ -157,18 +162,19 @@ class App extends Component {
             <h2>Sunset is at {this.state.sunset.toLocaleTimeString()}</h2>
         </div>
     );
-    const location = {
-      address: '1600 Amphitheatre Parkway, Mountain View, california.',
-      lat: 37.42216,
-      lng: -122.08427,
-    };
-
+    const Intro = () => (
+        <div className="App">
+            <h2>Your Mission: Send Intel</h2>
+            <button onClick={this.handleStart}>Start</button>
+        </div>
+    );
     return (
         <div>
             <header id="head" className="App-header">
             <h1 >Escape Berlin!</h1>
             <Sunset />
             <h3>Time Left: {this.state.time} </h3>
+            {this.state.num_correct === -1 && <Intro/>}
             {this.state.num_correct === 0 && <Clue1/>}
             {this.state.num_correct === 1 && <Clue2/>}
             {this.state.num_correct === 2 && <h2>Clue 3</h2>}
@@ -178,19 +184,22 @@ class App extends Component {
             {this.state.num_correct === 6 && <h2>Final Location</h2>}
 
 
-            <div>
-                <div className="submission">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            <input type="text" value={this.state.value} onChange={this.handleChange} placeholder = "Password..."/>
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
+            {this.state.num_correct !== -1 && (
+                <div>
+                    <div className="submission">
+                        <form onSubmit={this.handleSubmit}>
+                            <label>
+                                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder = "Password..."/>
+                            </label>
+                            <input className="Button" type="submit" value="Submit" />
+                        </form>
+                    </div>
+                    <div className="bottomSkip">
+                        <button className="Button" onClick={this.handleHint1}>Skip</button>
+                    </div>
                 </div>
-                <div className="bottomSkip">
-                    <button className="skip" onClick={this.handleHint1}>Skip</button>
-                </div>
-            </div>
+
+            )}
             </header>
         </div>
 
