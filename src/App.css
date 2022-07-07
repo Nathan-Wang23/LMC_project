@@ -1,10 +1,33 @@
 .App {
   text-align: center;
 }
+.Clue2 {
 
+}
+.bottomSkip {
+  text-align: center;
+  padding:25px;
+}
 
 
 .App-header {
+  background: linear-gradient(to bottom, black 0%, #333333 35%, black 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: green;
+  font-family: "Courier New";
+}
+
+.clue1-header {
+  text-align: center;
+}
+
+.clue2-header {
+  text-align: center;
   background: linear-gradient(to bottom right, rgba(2,0,36,1) 0%, rgba(184,55,55,1) 35%, rgba(235,162,21,1) 100%);
   min-height: 100vh;
   display: flex;
@@ -13,11 +36,34 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: "Courier New";
+  padding:80px;
+}
+
+.google-map-code {
+  text-align: center;
+}
+
+.form {
+  align-items: center;
+}
+
+.skip {
+  align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New";
+}
+
+.submission {
+  text-align: center;
 }
 
 
 label {
   padding:25px;
+  font-family: "Courier New";
 }
 
 input[type=submit]:hover {
@@ -30,6 +76,7 @@ input[type=text] {
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    font-family: "Courier New";
 }
 
 input[type=text]:focus {
@@ -45,13 +92,6 @@ input[type=submit] {
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    font-family: "Courier New";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
