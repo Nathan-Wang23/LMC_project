@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/LMC_project/static/css/main.fde7c186.css",
-    "main.js": "/LMC_project/static/js/main.5b1a97b4.js",
+    "main.js": "/LMC_project/static/js/main.8a756417.js",
     "static/js/787.74ff0e81.chunk.js": "/LMC_project/static/js/787.74ff0e81.chunk.js",
     "index.html": "/LMC_project/index.html",
     "main.fde7c186.css.map": "/LMC_project/static/css/main.fde7c186.css.map",
-    "main.5b1a97b4.js.map": "/LMC_project/static/js/main.5b1a97b4.js.map",
+    "main.8a756417.js.map": "/LMC_project/static/js/main.8a756417.js.map",
     "787.74ff0e81.chunk.js.map": "/LMC_project/static/js/787.74ff0e81.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fde7c186.css",
-    "static/js/main.5b1a97b4.js"
+    "static/js/main.8a756417.js"
   ]
 }
