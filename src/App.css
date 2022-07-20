@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+  align-items: center;
 }
 
-.bottomSkip {
+.bottom {
   text-align: center;
   padding-bottom:25px;
+  padding-left:12px;
+  padding-right: 12px;
 }
 
 
@@ -16,13 +19,14 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: green;
+  color: LimeGreen;
   font-family: "Courier New";
 }
 
 .clue1-header {
   text-align: center;
 }
+
 
 .clue2-header {
   text-align: center;
@@ -65,7 +69,13 @@ label {
   font-family: "Courier New";
 }
 
-
+.message {
+  font-family: "Courier New";
+  color: LimeGreen;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 16px;
+}
 
 input[type=text] {
     padding:5px;
@@ -73,10 +83,10 @@ input[type=text] {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: "Courier New";
+    font-size: 20px;
 }
 
 input[type=text]:focus {
-    zoom: 100.5%;
     border: 3px solid #900c3f;
     outline: none;
 }
@@ -84,15 +94,57 @@ input[type=text]:focus {
 
 .Button {
     padding:5px 15px;
-    background:#ccc;
+    background: LimeGreen;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: "Courier New";
+    margin-right:5px;
+    margin-left:5px;
+    margin-bottom: 5%;
+    margin-top: 5px;
+    font-size:20px;
+    color: black;
+    font-weight: bold;
 }
 
 .Button:hover {
   box-shadow:0px 0px 0px 2px #900c3f inset;
 }
 
+.Note {
+  z-index: 3;
+  margin-left: 1%;
+  margin-right: 1%;
+  align: center;
+  background-image: url("https://media.istockphoto.com/photos/sheet-of-old-slightly-yellowed-lined-note-paper-picture-id109152001?k=20&m=109152001&s=612x612&w=0&h=kaM_JDPMmlH9HdORnzLevKqlALvvPb01vqxsfRG8O9o=");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 5px;
+}
+
+.note_message {
+  font-family: "Chalkduster";
+  color: black;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 12px;
+}
+
+.clue {
+  font-family: "Courier New";
+  color: white;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center;
+}
+
+.bomb {
+  padding: 50%;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+}
