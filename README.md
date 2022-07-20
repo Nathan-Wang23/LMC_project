@@ -1,3 +1,14 @@
+WEBSITE Features:
+Uses localStorage so you can reload the page/leave for google maps without losing progress.
+Green spy font on blackish background
+Embeds google maps into each screen
+Password needed to get to the next screen
+Website shuts down at sunset
+Countdown timer to sunset
+Format: Map, Narrative, Clue
+Screen turns sunset colored when there is 10 minutes left
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
