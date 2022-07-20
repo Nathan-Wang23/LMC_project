@@ -2,7 +2,7 @@
   "name": "escape-berlin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nathan-wang23.github.io",
+  "homepage": "https://nathan-wang23.github.io/LMC_project",
   "dependencies": {
     "-": "^0.0.1",
     "@iconify/icons-mdi": "^1.2.23",
@@ -10,7 +10,6 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^4.0.0",
     "google-map-react": "^2.2.0",
     "iconify": "^1.4.0",
     "react": "^18.2.0",
@@ -46,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
