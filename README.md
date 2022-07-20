@@ -2,7 +2,7 @@
 
 Uses localStorage so you can reload the page/leave for google maps without losing progress.
 
-Green spy font on blackish background
+Green spy font on black gradient background
 
 Embeds google maps into each screen
 
@@ -12,9 +12,9 @@ Website shuts down at sunset
 
 Countdown timer to sunset
 
-Format: Map, Narrative, Clue
+Format: Map, Narrative, Clue --> Page of Narrative
 
-Screen turns sunset colored when there is 10 minutes left
+Screen turns sunset colored when there are 10 minutes left
 
 
 # Getting Started with Create React App
